@@ -30,15 +30,16 @@ const NavButton = styled(Button)<ButtonProps>(({ theme }) => ({
 
 export default function Header() {
   const leftSections = ["about", "skills", "experience"];
-  const rightSections = ["leadership", "interests", "projects", "contact"];
+  const rightSections = [
+    "leadership",
+    "education",
+    "interests",
+    "projects",
+    "contact",
+  ];
 
   const renderNav = (sec: string) => (
-    <NavButton
-      key={sec}
-      component={Link}
-      href={`#${sec}`}
-      disableRipple
-    >
+    <NavButton key={sec} component={Link} href={`#${sec}`} disableRipple>
       {sec}
     </NavButton>
   );
