@@ -1,7 +1,8 @@
 // src/app/projects/[slug]/page.tsx
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
+
 import projects from "@/data/projects";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import {
   Container,
   Typography,
@@ -12,20 +13,23 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 
-interface Props { params: { slug: string } }
-
-// 1) Pre-build only known slugs
+// 1) static params as before
 export async function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
-
-// 2) Disallow any other slug → 404
 export const dynamicParams = false;
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const project = projects.find((p) => p.slug === params.slug);
+// 2) The harness expects P extends Promise<any>. We declare it explicitly:
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  // await unwraps the object at runtime
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
   if (!project) {
-    return { title: "Project Not Found", description: "" };
+    return { title: "Project Not Found", description: "No project matches this slug." };
   }
   return {
     title: `${project.title} | Projects`,
@@ -33,8 +37,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function ProjectPage({ params }: Props) {
-  const project = projects.find((p) => p.slug === params.slug);
+// 3) Same trick on the page component
+export default async function ProjectPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
   if (!project) notFound();
 
   return (
