@@ -22,16 +22,23 @@ export default function ProjectCard({
 }) {
   return (
     <Card>
-      {/* navigates to your detail‐page */}
-      <CardActionArea component={Link} href={`/projects/${project.slug}`}>
+      {/* CardActionArea now directly uses Next’s Link */}
+      <CardActionArea
+        component={Link}
+        href={`/projects/${project.slug}`}
+      >
         <CardContent>
           <Typography variant="h5" gutterBottom>
             {project.title}
           </Typography>
-          <Typography variant="subtitle2" color="text.secondary" gutterBottom>
+          <Typography
+            variant="subtitle2"
+            color="text.secondary"
+            gutterBottom
+          >
             {project.role}
           </Typography>
-
+          
           <Box sx={{ mb: 1 }}>
             {project.stack.map((tech) => (
               <Chip
@@ -42,12 +49,13 @@ export default function ProjectCard({
               />
             ))}
           </Box>
-
-          <Typography noWrap>{project.challenge}</Typography>
+          
+          <Typography>
+            {project.challenge}
+          </Typography>
         </CardContent>
       </CardActionArea>
 
-      {/* optional external “Live Demo” button */}
       {project.liveDemoUrl && (
         <CardActions>
           <Button

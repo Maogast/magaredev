@@ -48,7 +48,7 @@ export default function Header() {
     <GradientAppBar position="sticky" elevation={4}>
       <Toolbar>
         <Typography variant="h6" sx={{ mr: 2, color: "#fff" }}>
-          Stephen Magare Ogaro
+          Stephen Magare
         </Typography>
 
         <Box sx={{ display: "flex", gap: 1 }}>

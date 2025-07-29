@@ -1,8 +1,7 @@
-// app/projects/[slug]/page.tsx
-
+// src/app/projects/[slug]/page.tsx
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import projects, { Project } from "@/data/projects";
+import projects from "@/data/projects";
 import {
   Container,
   Typography,
@@ -13,26 +12,25 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 
-interface Props {
-  params: { slug: string };
+interface Props { params: { slug: string } }
+
+// 1) Pre-build only known slugs
+export async function generateStaticParams() {
+  return projects.map((p) => ({ slug: p.slug }));
 }
+
+// 2) Disallow any other slug → 404
+export const dynamicParams = false;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = projects.find((p) => p.slug === params.slug);
   if (!project) {
-    return {
-      title: "Project Not Found",
-      description: "No project matches this slug.",
-    };
+    return { title: "Project Not Found", description: "" };
   }
   return {
     title: `${project.title} | Projects`,
     description: project.challenge,
   };
-}
-
-export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
 }
 
 export default function ProjectPage({ params }: Props) {
@@ -48,7 +46,6 @@ export default function ProjectPage({ params }: Props) {
       <Typography variant="h3" gutterBottom>
         {project.title}
       </Typography>
-
       <Typography variant="subtitle1" color="text.secondary" gutterBottom>
         Role: {project.role}
       </Typography>
