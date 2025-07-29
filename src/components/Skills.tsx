@@ -3,8 +3,8 @@ import { Container, Typography, Box, Paper, Chip } from "@mui/material";
 
 const categories: Record<string, string[]> = {
   Frontend: ["React", "Next.js", "MUI", "TypeScript"],
-  Backend: ["Node.js", "Express", "GraphQL"],
-  Tools: ["Git", "Docker", "Vercel"]
+  Backend: ["Node.js", "Express", "GraphQL","Firebase","Supabase"],
+  Tools: ["Git", "VS Code", "Vercel"]
 };
 
 export default function Skills() {

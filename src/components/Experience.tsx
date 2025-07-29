@@ -2,9 +2,9 @@ import React from "react";
 import { Container, Typography, List, ListItem, ListItemText } from "@mui/material";
 
 const experiences = [
-  "2024–Present: Systems Architect at Mine the Word Academy",
-  "2021–2024: Full-Stack Developer at FaithTech",
-  "2018–2021: IT Hardware Specialist at Nairobi Solutions"
+  "Mar 2025 – Present: Software Developer & IT Specialist at NK-Organics, Nairobi",
+  "Jan 2024 – Apr 2025: IT Support Technician & Data Entry Specialist at Private Client (Mr. Paul Musyoka), Nairobi",
+  "Sep 2023 – Dec 2023: Network & System Admin (Attachment) at National Treasury of Kenya, Nairobi",
 ];
 
 export default function Experience() {

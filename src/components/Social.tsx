@@ -7,8 +7,14 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import EmailIcon from "@mui/icons-material/Email";
 
 const socialLinks = [
+  {
+    href: "mailto:stevemagare4@gmail.com",
+    label: "Email",
+    icon: <EmailIcon />,
+  },
   {
     href: "https://github.com/Maogast",
     label: "GitHub",
@@ -42,7 +48,7 @@ export default function Social() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={label}
-          color="inherit"      // <- use inherit instead of primary
+          color="inherit"
         >
           {icon}
         </IconButton>
