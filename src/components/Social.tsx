@@ -42,7 +42,7 @@ const socialLinks: SocialLink[] = [
   },
   {
     href:
-      "https://wa.me/254768564580?text=Hi%20Stephen!%20I%20saw%20your%20portfolio&utm_source=portfolio&utm_medium=link",
+      "https://wa.me/254745325480?text=Hi%20Stephen!%20I%20saw%20your%20portfolio&utm_source=portfolio&utm_medium=link",
     label: "WhatsApp",
     icon: <WhatsAppIcon />,
   },
