@@ -3,7 +3,7 @@ import { Container, Typography, List, ListItem, ListItemText } from "@mui/materi
 
 const experiences = [
   "Mar 2025 – Present: Software Developer & IT Specialist at NK-Organics, Nairobi",
-  "Jan 2024 – Apr 2025: IT Support Technician & Data Entry Specialist at Private Client (Mr. Paul Musyoka), Nairobi",
+  "Jan 2024 – Apr 2025: IT Support Technician & Data Entry Specialist at Private Client, Nairobi",
   "Sep 2023 – Dec 2023: Network & System Admin (Attachment) at National Treasury of Kenya, Nairobi",
 ];
 
