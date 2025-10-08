@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Typography, Box, Paper, Chip } from "@mui/material";
 
 const categories: Record<string, string[]> = {
-  Frontend: ["React", "Next.js", "MUI", "TypeScript"],
+  Frontend: ["React", "Next.js", "WordPress", "MUI", "TypeScript"],
   Backend: ["Node.js", "Express", "GraphQL","Firebase","Supabase"],
   Tools: ["Git", "VS Code", "Vercel"]
 };

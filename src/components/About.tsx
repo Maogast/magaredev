@@ -15,7 +15,7 @@ export default function About() {
       </Typography>
 
       <Typography variant="body1" paragraph>
-        I’m a Full-Stack React/Next.js Developer & Systems Architect and a
+        I’m a Full-Stack React/Next.js and WordPress Developer & Systems Architect and a
         seasoned Hardware & Systems Engineer with hands-on experience
         optimizing server infrastructures, network topologies, and end-to-end
         web applications. As a committed Christian, my faith in Christ shapes

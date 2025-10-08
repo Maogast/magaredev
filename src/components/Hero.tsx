@@ -71,7 +71,7 @@ export default function Hero() {
           Stephen Magare Ogaro
         </Typography>
         <Typography variant="h5" component="p" sx={{ mb: 4 }}>
-          Full-Stack React/Next.js Developer & Systems Architect & Hardware Engineer
+          Full-Stack React/Next.js and WordPress Developer & Systems Architect & Hardware Engineer
 
         </Typography>
 
