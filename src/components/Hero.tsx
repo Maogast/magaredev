@@ -42,7 +42,7 @@ export default function Hero() {
         py: 8,
       }}
     >
-      <Container maxWidth="sm" sx={{ textAlign: "center" }}>
+      <Container maxWidth="md" sx={{ textAlign: "center" }}>
         {/* Profile image */}
         <Box
           sx={{
@@ -70,9 +70,18 @@ export default function Hero() {
         <Typography variant="h2" component="h1" gutterBottom>
           Stephen Magare Ogaro
         </Typography>
-        <Typography variant="h5" component="p" sx={{ mb: 4 }}>
-          Full-Stack React/Next.js and WordPress Developer & Systems Architect & Hardware Engineer
+        <Typography variant="h4" component="p" sx={{ mb: 2, fontWeight: 500 }}>
+          Full-Stack Developer & Quality Engineering Specialist
+        </Typography>
+        
+        <Typography variant="h6" component="p" sx={{ mb: 4, color: "rgba(255,255,255,0.8)" }}>
+          Next.js • React • Java • Test Automation • API & Mobile Testing
+        </Typography>
 
+        <Typography variant="body1" sx={{ mb: 4, maxWidth: "600px", mx: "auto" }}>
+          Passionate about driving quality through code. Experienced in contract testing, 
+          mobile automation, and shift-left testing practices. Currently transitioning into 
+          Developer in Test roles with focus on building scalable test frameworks.
         </Typography>
 
         <Button
@@ -82,8 +91,9 @@ export default function Hero() {
           onClick={handleConnectClick}
           aria-expanded={showSocial}
           endIcon={showSocial ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+          sx={{ mb: 2 }}
         >
-          {showSocial ? "Hide Connections" : "Let’s Connect"}
+          {showSocial ? "Hide Connections" : "Let's Connect"}
         </Button>
 
         <Collapse

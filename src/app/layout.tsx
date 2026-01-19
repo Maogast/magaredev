@@ -27,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <head />    {/* ← Next.js injects <meta> tags here */}
+      <head />
       <body>
         <Providers>{children}</Providers>
       </body>
