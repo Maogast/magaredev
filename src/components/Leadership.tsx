@@ -21,7 +21,7 @@ export default function Leadership() {
 
           <ListItem disableGutters>
             <ListItemText
-              primary="Mentored junior developers in React, Next.js, and workflow best practices."
+              primary="Mentored junior developers in React, Next.js, WordPress and workflow best practices."
             />
           </ListItem>
 
