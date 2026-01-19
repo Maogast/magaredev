@@ -6,15 +6,11 @@
       "use": "@vercel/next"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
+  "buildCommand": "rm -rf node_modules package-lock.json && npm install --legacy-peer-deps --force && npm run build",
+  "installCommand": "",
+  "outputDirectory": ".next",
   "env": {
     "NEXT_PUBLIC_SITE_URL": "https://magaredev.vercel.app",
     "NEXT_PUBLIC_GITHUB_USERNAME": "Maogast"
-    
   }
 }
