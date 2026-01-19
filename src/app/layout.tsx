@@ -4,6 +4,7 @@ import "@/styles/globals.scss";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Providers from "@/components/Providers";
+import type { ReactNode } from "react"; // Add this import
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -23,7 +24,7 @@ export const viewport: Viewport = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode; // Change from React.ReactNode to ReactNode
 }) {
   return (
     <html lang="en" className={inter.variable}>
