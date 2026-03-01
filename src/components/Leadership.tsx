@@ -1,13 +1,15 @@
+"use client";
+
 import React from "react";
 import { 
   Container, 
   Typography, 
-  Box 
+  Box,
+  Paper,
+  Grid,
+  Fade,
+  useTheme
 } from "@mui/material";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import { 
   Groups, 
   School, 
@@ -16,7 +18,6 @@ import {
   HistoryEdu,
   MedicalServices
 } from "@mui/icons-material";
-import Divider from "@mui/material/Divider";
 
 const leadershipRoles = [
   {
@@ -42,10 +43,10 @@ const leadershipRoles = [
   },
   {
     icon: <MedicalServices />,
-    title: "Co-Manager, Medical Missionary Operations",
+    title: "Medical Missionary & Technical Lead",
     organization: "Nature's Kitchen Medical Missionary",
     period: "2024 - Present",
-    description: "Co-leading medical missionary initiatives that integrate holistic health education, community wellness programs, and sustainable health practices."
+    description: "Leading medical missionary initiatives that integrate holistic health education, community wellness programs, and sustainable health practices, while providing technical direction for digital platforms and content strategy."
   },
   {
     icon: <Business />,
@@ -64,73 +65,165 @@ const leadershipRoles = [
 ];
 
 export default function Leadership() {
+  const theme = useTheme();
+
   return (
     <Container id="leadership" sx={{ py: 8 }}>
-      <Typography variant="h2" gutterBottom align="center" sx={{ mb: 4 }}>
-        Community Leadership & Ministry
-      </Typography>
-      
-      <Typography variant="body1" paragraph align="center" sx={{ mb: 6 }}>
-        Integrating technical expertise with spiritual leadership to drive transformation 
-        in communities, churches, and organizations through strategic ministry and servant leadership.
-      </Typography>
+      {/* Header Section */}
+      <Fade in timeout={800}>
+        <Box sx={{ mb: 6 }}>
+          <Typography 
+            variant="h2" 
+            gutterBottom 
+            align="center" 
+            sx={{ 
+              fontWeight: 700,
+              background: 'linear-gradient(135deg, primary.main 0%, secondary.main 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              mb: 2
+            }}
+          >
+            Community Leadership & Ministry
+          </Typography>
+          
+          <Typography 
+            variant="body1" 
+            paragraph 
+            align="center" 
+            sx={{ 
+              maxWidth: '800px', 
+              mx: 'auto',
+              fontSize: '1.1rem',
+              color: 'text.secondary'
+            }}
+          >
+            Integrating technical expertise with spiritual leadership to drive transformation 
+            in communities, churches, and organizations through strategic ministry and servant leadership.
+          </Typography>
+        </Box>
+      </Fade>
 
-      <List sx={{ width: '100%' }}>
+      {/* Leadership Cards */}
+      <Grid container spacing={3}>
         {leadershipRoles.map((role, index) => (
-          <React.Fragment key={index}>
-            <ListItem alignItems="flex-start" sx={{ py: 2 }}>
-              <ListItemIcon sx={{ minWidth: 40, mr: 2 }}>
-                {role.icon}
-              </ListItemIcon>
-              <ListItemText
-                primary={
-                  <Typography variant="h6" component="span" sx={{ fontWeight: 600 }}>
-                    {role.title}
-                  </Typography>
-                }
-                secondary={
-                  <React.Fragment>
-                    <Typography
-                      component="span"
-                      variant="body2"
-                      color="text.primary"
-                      sx={{ display: 'block', mb: 1 }}
-                    >
+          <Grid 
+            size={{ xs: 12, md: 6 }}
+            key={index}
+          >
+            <Fade in timeout={500 + index * 100}>
+              <Paper
+                elevation={2}
+                sx={{
+                  p: 3,
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+                  '&:hover': {
+                    transform: 'translateY(-4px)',
+                    boxShadow: theme.shadows[8],
+                  },
+                  position: 'relative',
+                  overflow: 'hidden',
+                  '&::before': {
+                    content: '""',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: '4px',
+                    background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+                  }
+                }}
+              >
+                <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
+                  <Box
+                    sx={{
+                      backgroundColor: 'primary.main',
+                      borderRadius: '12px',
+                      width: 48,
+                      height: 48,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      mr: 2,
+                      color: 'white',
+                      '& svg': {
+                        fontSize: 28,
+                      }
+                    }}
+                  >
+                    {role.icon}
+                  </Box>
+                  <Box sx={{ flex: 1 }}>
+                    <Typography variant="h6" sx={{ fontWeight: 600, mb: 0.5 }}>
+                      {role.title}
+                    </Typography>
+                    <Typography variant="body2" color="primary" sx={{ fontWeight: 500 }}>
                       {role.organization} • {role.period}
                     </Typography>
-                    <Typography
-                      component="span"
-                      variant="body2"
-                      color="text.secondary"
-                    >
-                      {role.description}
-                    </Typography>
-                  </React.Fragment>
-                }
-              />
-            </ListItem>
-            {index < leadershipRoles.length - 1 && <Divider variant="inset" component="li" />}
-          </React.Fragment>
+                  </Box>
+                </Box>
+                
+                <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.6 }}>
+                  {role.description}
+                </Typography>
+              </Paper>
+            </Fade>
+          </Grid>
         ))}
-      </List>
+      </Grid>
 
-      <Box sx={{ 
-        mt: 6, 
-        p: 3, 
-        bgcolor: 'background.default', 
-        borderRadius: 2,
-        borderLeft: '4px solid',
-        borderColor: 'primary.main'
-      }}>
-        <Typography variant="h6" gutterBottom>
-          Leadership Philosophy
-        </Typography>
-        <Typography variant="body1">
-          &ldquo;I believe in servant leadership that empowers others through mentorship, 
-          strategic vision that transforms communities, and faithful stewardship 
-          that leverages both spiritual gifts and professional skills.&rdquo;
-        </Typography>
-      </Box>
+      {/* Leadership Philosophy */}
+      <Fade in timeout={1000}>
+        <Box sx={{ 
+          mt: 8, 
+          p: 4, 
+          bgcolor: 'background.default', 
+          borderRadius: 3,
+          borderLeft: '6px solid',
+          borderColor: 'primary.main',
+          boxShadow: theme.shadows[4],
+          position: 'relative',
+          overflow: 'hidden',
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            bottom: -30,
+            right: -30,
+            width: 150,
+            height: 150,
+            borderRadius: '50%',
+            background: `radial-gradient(circle, ${theme.palette.primary.main}20 0%, transparent 70%)`,
+            pointerEvents: 'none',
+          }
+        }}>
+          <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, position: 'relative', zIndex: 1 }}>
+            Leadership Philosophy
+          </Typography>
+          <Typography variant="body1" sx={{ fontSize: '1.1rem', fontStyle: 'italic', position: 'relative', zIndex: 1 }}>
+            &ldquo;I believe in servant leadership that empowers others through mentorship, 
+            strategic vision that transforms communities, and faithful stewardship 
+            that leverages both spiritual gifts and professional skills.&rdquo;
+          </Typography>
+          <Box
+            sx={{
+              position: 'absolute',
+              bottom: 20,
+              right: 20,
+              opacity: 0.1,
+              transform: 'rotate(-10deg)',
+              fontSize: '6rem',
+              fontWeight: 900,
+              color: 'primary.main',
+              pointerEvents: 'none',
+            }}
+          >
+            &ldquo;
+          </Box>
+        </Box>
+      </Fade>
     </Container>
   );
 }

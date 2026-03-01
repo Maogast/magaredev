@@ -9,7 +9,9 @@ import {
   Box,
   Chip,
   Paper,
+  Link as MuiLink,
 } from "@mui/material";
+import NextLink from "next/link";
 
 export default function About() {
   const skillCategories = [
@@ -62,6 +64,56 @@ export default function About() {
         "IT Support & User Training",
       ],
     },
+    {
+      title: "Technical Content & Prompt Engineering",
+      skills: [
+        "AI-Powered Content Generation (DeepSeek, Gemini)",
+        "SEO Blog Writing & Optimization",
+        "Product Description & Marketing Copy",
+        "Technical Documentation & SOPs",
+        "Medical & Herbal Wellness Writing",
+        "Church & Ministry Communication",
+        "Poster & Graphic Design Prompting",
+        "Devotion & Spiritual Reflection Writing",
+      ],
+    },
+    {
+      title: "Ministry & Organizational Leadership",
+      skills: [
+        "Church Administration (Board Proposals, Budgets)",
+        "Prayer Cell Coordination & Leadership",
+        "Event Planning (Vespers, Fasting, Vigils)",
+        "Departmental Strategy (Revival & Reformation)",
+        "Master Guide Program Support",
+        "Volunteer & Team Coordination",
+        "Public Communication (WhatsApp, Announcements)",
+        "Spiritual Curriculum Development",
+      ],
+    },
+    {
+      title: "Medical Missionary & Natural Health",
+      skills: [
+        <MuiLink
+          key="nk-link"
+          component={NextLink}
+          href="https://nkmm.co.ke"
+          target="_blank"
+          rel="noopener noreferrer"
+          underline="hover"
+          color="inherit"
+          sx={{ textDecoration: 'none' }}
+        >
+          NK-Organics Product Management
+        </MuiLink>,
+        "Herbal & Natural Remedy Knowledge",
+        "Customer Health Consultation Support",
+        "Product Image Prompting & Branding",
+        "E-commerce Content Strategy",
+        "Wellness Blog Creation",
+        "Natural Remedy Education (Diabetes, Detox, etc.)",
+        "Faith-Based Health Messaging",
+      ],
+    },
   ];
 
   return (
@@ -85,11 +137,19 @@ export default function About() {
         validation.
       </Typography>
 
+      <Typography variant="body1" paragraph sx={{ mb: 4, fontSize: "1.1rem", fontStyle: "italic", color: "primary.main" }}>
+        Beyond code, I actively apply my technical skills in real-world ministry and business contexts. 
+        I lead the <strong>Revival & Reformation department</strong> at Zimmerman SDA Church, coordinate 
+        prayer cells and events, and serve at <strong> NK-Organics Medical Missionaries</strong>, 
+        where I blend software development with content creation, product strategy, and natural health education. 
+        This unique blend of technical, organizational, and communicative expertise allows me to solve complex 
+        problems and create impactful solutions across domains.
+      </Typography>
+
       <Typography variant="h4" gutterBottom sx={{ mt: 6, mb: 3 }}>
         Core Competencies
       </Typography>
 
-      {/* Option 1: Use Grid2 (MUI v6+) */}
       <Grid container spacing={3}>
         {skillCategories.map((category, index) => (
           <Grid key={index} size={{ xs: 12, md: 6 }}>
