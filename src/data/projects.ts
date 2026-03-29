@@ -71,7 +71,7 @@ const projects: Project[] = [
       "Developed a React SPA with a Supabase backend and secure REST API integration for live product data, plus performance optimizations.",
     result:
       "Delivered a flagship, customer-centric store that boosted engagement and streamlined stock management.",
-     liveDemoUrl: "https://nk2-organics-frontend.vercel.app/" 
+    liveDemoUrl: "https://nk2-organics-frontend.vercel.app/",
   },
   {
     slug: "performance-tracker-magare",
@@ -110,7 +110,34 @@ const projects: Project[] = [
       "Developed a React app with Firebase real-time database, role-based access, and an intuitive UI for marking and reviewing attendance.",
     result:
       "Modernized record-keeping, improved data accuracy, and simplified administrative workflows.",
-    liveDemoUrl: "https://zimmersdachurchtracker.vercel.app/" //add your live link here
+    liveDemoUrl: "https://zimmersdachurchtracker.vercel.app/",
+  },
+  // ✨ New portfolio entries ✨
+  {
+    slug: "mg-portfolio-stephen",
+    title: "Stephen's Master Guide Portfolio",
+    role: "Full-Stack Developer & Content Creator",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+    challenge:
+      "Needed a personal portfolio to document the Master Guide journey, share devotions, and present professional skills in one cohesive site.",
+    solution:
+      "Built a modern, responsive Next.js app with dark mode, devotion modals, Steps to Christ summaries, and a dedicated Nutrition Honor study guide.",
+    result:
+      "A complete digital showcase that serves as Master Guide evidence, a platform for spiritual resources, and a professional portfolio.",
+    liveDemoUrl: "https://mg-portfolio-pi.vercel.app/",
+  },
+  {
+    slug: "mg-portfolio-danstan",
+    title: "Elder Danstan's Master Guide Portfolio",
+    role: "Lead Developer & Designer",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+    challenge:
+      "Create a distinct, elder‑appropriate portfolio that differs from the original while maintaining the same powerful functionality.",
+    solution:
+      "Customised with a green/amber colour scheme, a new header design, two‑column hero layout, and a dedicated devotions page – all while preserving the full feature set.",
+    result:
+      "A unique portfolio for Elder Danstan that reflects his role, includes all required Master Guide evidence, and stands apart from the original design.",
+    liveDemoUrl: "https://mg-danstan.vercel.app/",
   },
 ];
 
